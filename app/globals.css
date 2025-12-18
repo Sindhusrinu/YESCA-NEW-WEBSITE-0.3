@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+/* 
+:root {
+   --background: #ffffff;
+   --foreground: #171717;
+}
+
+@theme inline {
+   --color-background: var(--background);
+   --color-foreground: var(--foreground);
+   --font-sans: var(--font-geist-sans);
+   --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+   :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+      scrollbar-color: #2d358e #00000000;
+      scrollbar-width: none;
+   }
+} */
+
+/* globals.css */
+:root {
+  --font-roboto-condensed: "Roboto Condensed", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+.font-roboto-condensed {
+  font-family: var(--font-roboto-condensed);
+}
+
+.font-poppins {
+  font-family: var(--font-poppins);
+}
+
+body {
+  /* background: linear-gradient(180deg, rgba(45, 53, 142, 1) 0%, rgba(117, 167, 218, 1) 83%); */
+  background-color: transparent !important;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.contact-page-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Gradient background */
+  background: linear-gradient(135deg, #75a7da, #2d358e, #808080);
+  background-size: 200% 200%;
+
+  /* Glass effect */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.1);
+
+  /* Hover animation */
+  transition: transform 0.4s ease, background-position 4s ease;
+  z-index: 0;
+}
+
+.contact-page-bg:hover {
+  transform: scale(1.03) translateY(-5px);
+  background-position: 100% 50%;
+}
+
+/* globals.css */
+
+/* Animate old content out and new content in */
+/* ::view-transition-old(root) {
+   animation: slide-out 1s ease forwards;
+}
+::view-transition-new(root) {
+   animation: slide-in 1s ease forwards;
+}
+
+@keyframes slide-out {
+   from {
+      transform: translateY(0);
+      opacity: 1;
+      scale: 1;
+   }
+   to {
+      transform: translateY(-100%);
+      opacity: 1;
+      scale: 0.8;
+   }
+}
+
+@keyframes slide-in {
+   from {
+      transform: translateY(100%);
+      opacity: 1;
+   }
+   to {
+      transform: translateY(0);
+      opacity: 1;
+   }
+} */
+
+/* Door animation */
+
+.door {
+  position: fixed;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 99;
+  pointer-events: none;
+}
+
+.door.left {
+  left: 0;
+  background: rgb(255, 255, 255);
+  transform: translateX(-130%);
+  z-index: 999;
+  overflow: visible;
+}
+
+.door.right {
+  right: 0;
+  background: rgb(255, 255, 255);
+  transform: translateX(130%);
+  overflow: visible;
+}
+
+/* Door animations remain the same */
+.door-close-left {
+  animation: close-left 1s forwards ease-in-out;
+}
+.door-close-right {
+  animation: close-right 1s forwards ease-in-out;
+}
+.door-open-left {
+  animation: open-left 1s forwards ease-in-out;
+}
+.door-open-right {
+  animation: open-right 1s forwards ease-in-out;
+}
+
+/* Keyframes remain the same */
+@keyframes close-left {
+  0% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes close-right {
+  0% {
+    transform: translateX(130%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes open-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-130%);
+  }
+}
+@keyframes open-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(130%);
+  }
+}
+/* Default / Desktop (1024px and above) */
+.left-door-img {
+  position: absolute;
+  top: 30%;
+  left: 58%;
+  width: 60%;
+  height: auto;
+}
+
+.right-door-img {
+  position: absolute;
+  bottom: 15.5%;
+  right: 70%;
+  width: 30%;
+  height: auto;
+}
+
+/* Extra Large Desktop: 1441px – 1600px */
+@media (min-width: 1441px) and (max-width: 1600px) {
+  .left-door-img {
+    top: 20%;
+    left: 64%;
+    width: 52%;
+  }
+  .right-door-img {
+    bottom: 19%;
+    right: 73%;
+    width: 27%;
+  }
+}
+
+/* Large Desktop >1600px (optional, same as default) */
+@media (min-width: 1601px) {
+  .left-door-img {
+    top: 30%;
+    left: 65%;
+    width: 50%;
+  }
+  .right-door-img {
+    bottom: 18.3%;
+    right: 74%;
+    width: 26%;
+  }
+}
+
+/* Hide doors on smaller screens (<1024px) */
+@media (max-width: 1023px) {
+  .door {
+    display: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0065d1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0065d100;
+}
+
+/* Font's  */
+
+:root {
+  --font-roboto-condensed: "Roboto Condensed", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+.font-robotoCondensed {
+  font-family: var(--font-roboto-condensed);
+}
+
+.font-poppins {
+  font-family: var(--font-poppins);
+}
