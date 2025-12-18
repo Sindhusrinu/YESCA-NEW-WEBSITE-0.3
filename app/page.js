@@ -5,6 +5,7 @@ import SecondSection from "./(SECTIONS)/SecondSection";
 import SeventhSection from "./(SECTIONS)/SeventhSection";
 import SixthSection from "./(SECTIONS)/SixthSection";
 import ThirdSection from "./(SECTIONS)/ThirdSection";
+import VJI from "./(SECTIONS)/VJI";
 import WhyYesca from "./(SECTIONS)/WhyYesca";
 import Yesca from "./(SECTIONS)/Yesca";
 import HomePage from "./Components/HomePage/page";
@@ -24,6 +25,7 @@ export default function Home() {
       <FifthSection />
       <SixthSection />
       <SeventhSection />
+      <VJI/>
     </>
   );
 }
